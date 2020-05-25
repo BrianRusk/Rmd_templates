@@ -1,0 +1,78 @@
+---
+title: "Notes for Reproducible Templates"
+author: "Brian Rusk"
+date: "25/05/2020"
+output:
+  html_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# This is a level 1 header
+
+## R Markdown
+
+### This is a level 3 header
+
+Here is an example of a non-numbered list:
+
+* Breakfast
+    - food
+        + eggs
+        + toast
+        + bacon
+    - drink
+        + apple juice
+* Lunch
+    - taco
+* Dinner
+    - baked chicken
+    - broccoli
+    - rice
+
+
+Here is an example of a numbered list:
+
+1. Breakfast
+    a. food
+        i. eggs
+        ii. toast
+        iii. bacon
+    b. drink
+        i. apple juice
+2. Lunch
+    a. taco
+3. Dinner
+    a. baked chicken
+    b. broccoli
+    c. rice
+    
+Here is an example of a blockquote:
+
+> This is a block quote. This  
+> paragraph has two lines. <!-- The newline requires a double space -->
+>
+> 1. This is a list inside a block quote.
+> 2. Second item.
+
+Here is an example of a nested blockquote:
+
+> This is a block quote. This
+> paragraph has two lines.
+>
+> > This text is nested
+
+
+Here is an example of code in a blockquote:
+
+>     2+2
+>     mean(c(1,2,3,4,5))
+
+
+
+Here is a link to [GOOGLE](https://www.google.com/)
+
+<http://rmarkdown.rstudio.com>
