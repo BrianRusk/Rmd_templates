@@ -76,3 +76,126 @@ Here is an example of code in a blockquote:
 Here is a link to [GOOGLE](https://www.google.com/)
 
 <http://rmarkdown.rstudio.com>
+
+## Resources
+
+<https://pandoc.org/MANUAL.html#pandocs-markdown>
+
+<https://yihui.org/knitr/options/>
+
+<https://rmarkdown.rstudio.com/lesson-8.html>
+
+All about YAML in rmd [YAML](https://github.com/viking/r-yaml)
+
+Packages in Git and Github <http://r-pkgs.had.co.nz/git.html>
+
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+```{r pressure2, echo=FALSE, fig.height=5, fig.width=5}
+plot(pressure)
+```
+
+# Tables
+
+`kable` is best but `printr` is useful too.
+
+## Insert tables
+
+```{r carsTab, echo=FALSE}
+knitr::kable(head(cars),
+             caption = "Top 6 rows of Cars Dataset")
+```
+
+# Insert an Equation
+
+$$ Y = \beta_0 + \beta_1x $$
+Also, see <https://www.overleaf.com/learn/latex/Mathematical_expressions> website for info on equations.
+
+<https://yihui.org/knitr/options/>
+
+<https://pandoc.org/MANUAL.html#pandocs-markdown>
+
+<https://sachsmc.github.io/knit-git-markr-guide/knitr/knit.html#tables>
+
+```{r kable, results='asis'}
+knitr::kable(head(mtcars), digits = 2, align = c(rep("l", 4), rep("c", 4), rep("r", 4)))
+
+```
+
+
+```{r star, results = 'asis', warning=FALSE, message=FALSE}
+library(stargazer, quietly = TRUE)
+
+fit1 <- lm(mpg ~ wt, mtcars)
+fit2 <- lm(mpg ~ wt + hp, mtcars)
+fit3 <- lm(mpg ~ wt + hp + disp, mtcars)
+
+stargazer(fit1, fit2, fit3, type = 'html')
+```
+
+<https://yihui.org/printr/>
+
+```{r}
+library(printr, quietly = TRUE) # This just needs to be loaded apparently.
+options(digits = 4)
+set.seed(123)
+x = matrix(rnorm(40), 5)
+
+dimnames(x) = list(NULL, head(LETTERS, ncol(x)))
+x
+```
+
+```{r}
+knitr::kable(x, digits = 3, caption = "A table produced by printr.")
+```
+
+
+```{r}
+head(mtcars)
+```
+
+# Module 4
+
+<!-- ****************************************** -->
+<!-- * The following text is provided -->
+<!-- * for easier cutting and pasting as you -->
+<!-- * work through the exercises in -->
+<!-- * Module 2 - lesson 4: Images, Video -->
+<!-- * and Footnotes -->
+<!-- ****************************************** -->
+
+## Insert Images
+
+Here is an image inserted
+
+![sunstar](sunstar/sunstar.png)
+
+
+Here is the R logo
+
+![r logo](https://www.r-project.org/logo/Rlogo.svg)
+
+
+## Insert an Animated GIF and Video
+
+![sunstar](sunstar/sunstar.gif)
+Hi
+
+![sunstar](sunstar/sunstar.mp4)
+
+Inserting video
+
+<http://ijlyttle.github.io/vembedr/>
+
+## Insert text with some footnotes
+
+Here is a footnote reference [^1] and another [^longnote]
+
+Here is an inline footnote ^[Inlines notes are easier to write, since you don't have to pick an identifier and move down to type the note.]
+
+[^1]: Here is the footnote.
+[^longnote]: Here's one with multiple blocks.
+
