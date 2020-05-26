@@ -45,7 +45,7 @@ plot(pressure)
 <!-- * Module 2 - lesson 5: Presentation Formats -->
 <!-- ****************************************** -->
 
-## A slide with an inserted image
+## A slide with an inserted image {.flexbox .vcenter}
 
 Here is an image inserted
 
@@ -78,4 +78,10 @@ $$ Y = \beta_0 + \beta_1x $$
 - bullet 2
 - bullet 3
 
+## Resources
 
+<https://bookdown.org/yihui/rmarkdown/ioslides-presentation.html>
+
+<https://bookdown.org/yihui/rmarkdown/revealjs.html>
+
+<https://revealjs.com/#/>
